@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "spec-version": "1.0"
+  },
+  "configuration-groups": [
+    {
+      "label": "Excel File Properties",
+      "properties": [
+        {
+          "widget-type": "textbox",
+          "label": "Reference Name",
+          "name": "referenceName"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "File Path",
+          "name": "filePath"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "File Regex",
+          "name": "filePattern"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "File Tracking Table",
+          "name": "memoryTableName"
+        },
+        {
+          "widget-type": "number",
+          "label": "Tracking Table Data Expiry Period (Days)",
+          "name": "tableExpiryPeriod"
+        },
+        {
+          "widget-type": "select",
+          "label": "Reprocess Files",
+          "name": "reprocess",
+          "widget-attributes": {
+            "values": [
+              "true",
+              "false"
+            ],
+            "default": "false"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Sheet Selection",
+      "properties": [
+        {
+          "widget-type": "select",
+          "label": "Select Sheet Using",
+          "name": "sheet",
+          "widget-attributes": {
+            "values": [
+              "Sheet Name",
+              "Sheet Number"
+            ],
+            "default": "Sheet Number"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Value",
+          "name": "sheetValue"
+        }
+      ]
+    },
+    {
+      "label": "Filtering and Mapping",
+      "properties": [
+        {
+          "widget-type": "csv",
+          "label": "Columns To Be Extracted",
+          "name": "columnList"
+        },
+        {
+          "widget-type": "keyvalue",
+          "label": "Column Label Mapping ",
+          "name": "columnMapping",
+          "widget-attributes": {
+            "showDelimiter": "false"
+          }
+        },
+        {
+          "widget-type": "select",
+          "label": "Skip First Row",
+          "name": "skipFirstRow",
+          "widget-attributes": {
+            "values": [
+              "true",
+              "false"
+            ],
+            "default": "false"
+          }
+        },
+        {
+          "widget-type": "select",
+          "label": "Terminate If Empty Row",
+          "name": "terminateIfEmptyRow",
+          "widget-attributes": {
+            "values": [
+              "true",
+              "false"
+            ],
+            "default": "false"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Max Rows Limit",
+          "name": "rowsLimit"
+        },
+        {
+          "widget-type": "keyvalue-dropdown",
+          "label": "Field Name Schema Type Mapping",
+          "name": "outputSchema",
+          "widget-attributes": {
+            "showDelimiter": "false",
+            "dropdownOptions": [
+              "boolean",
+              "bytes",
+              "double",
+              "float",
+              "int",
+              "long",
+              "string"
+            ],
+            "key-placeholder": "Field Name"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Error Handling",
+      "properties": [
+        {
+          "widget-type": "select",
+          "label": "On Error",
+          "name": "ifErrorRecord",
+          "widget-attributes": {
+            "values": [
+              "Ignore error and continue",
+              "Exit on error",
+              "Write to error dataset"
+            ],
+            "default": "Ignore error and continue"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Error Dataset",
+          "name": "errorDatasetName"
+        }
+      ]
+    }
+  ],
+  "outputs": []
+}

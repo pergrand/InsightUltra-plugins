@@ -1,0 +1,106 @@
+
+{
+  "metadata": {
+    "spec-version": "1.0"
+  },
+  "configuration-groups": [
+    {
+      "label": "Time Partitioned Fileset - ORC",
+      "properties": [
+        {
+          "widget-type": "dataset-selector",
+          "label": "Dataset Name",
+          "name": "name"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Dataset Base Path",
+          "name": "basePath"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Partition Directory Format",
+          "name": "filePathFormat"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Time Zone",
+          "name": "timeZone"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Partition Offset",
+          "name": "partitionOffset"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Clean Partitions Older Than",
+          "name": "cleanPartitionsOlderThan"
+        },
+        {
+          "widget-type": "select",
+          "label": "Compression Codec",
+          "name": "compressionCodec",
+          "widget-attributes": {
+            "values": [
+              "None",
+              "Snappy",
+              "ZLIB"
+            ],
+            "default": "None"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Compression Chunk Size",
+          "name": "compressionChunkSize"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Bytes per stripe",
+          "name": "stripeSize"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Rows between index entries",
+          "name": "indexStride"
+        },
+        {
+          "widget-type": "select",
+          "label": "Create inline indexes",
+          "name": "createIndex",
+          "widget-attributes": {
+            "values": [
+              "True",
+              "False"
+            ],
+            "default": "True"
+          }
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "schema",
+      "widget-type": "schema",
+      "widget-attributes": {
+        "schema-types": [
+          "boolean",
+          "int",
+          "long",
+          "float",
+          "double",
+          "bytes",
+          "string"
+        ],
+        "schema-default-type": "string"
+      }
+    }
+  ],
+  "jump-config": {
+    "datasets": [{
+      "ref-property-name": "name"
+    }]
+  }
+}

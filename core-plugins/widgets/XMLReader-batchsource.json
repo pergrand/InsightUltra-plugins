@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "spec-version": "1.0"
+  },
+  "configuration-groups": [
+    {
+      "label": "XML Reader Batch Source Properties",
+      "properties": [
+        {
+          "widget-type": "textbox",
+          "label": "Reference Name",
+          "name": "referenceName"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Path",
+          "name": "path"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "File Pattern",
+          "name": "pattern"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Node Path",
+          "name": "nodePath"
+        },
+        {
+          "widget-type": "select",
+          "label": "Action After Processing File",
+          "name": "actionAfterProcess",
+          "widget-attributes": {
+            "values": [
+              "None",
+              "Delete",
+              "Move",
+              "Archive"
+            ],
+            "default": "None"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Target Folder",
+          "name": "targetFolder"
+        },
+        {
+          "widget-type": "select",
+          "label": "Reprocessing Required",
+          "name": "reprocessingRequired",
+          "widget-attributes": {
+            "values": [
+              "Yes",
+              "No"
+            ],
+            "default": "Yes"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Table Name",
+          "name": "tableName"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Table Data Expiry Period (Days)",
+          "name": "tableExpiryPeriod"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Temporary Folder",
+          "name": "temporaryFolder",
+          "widget-attributes": {
+            "default": "/tmp"
+          }
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "widget-type": "non-editable-schema-editor",
+      "schema": {
+        "name": "etlSchemaBody",
+        "type": "record",
+        "fields": [
+          {
+            "name": "offset",
+            "type": "long"
+          },
+          {
+            "name": "filename",
+            "type": "string"
+          },
+          {
+            "name": "record",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}
